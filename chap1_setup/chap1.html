@@ -1,0 +1,195 @@
+<h1 id="tutorial-1---the-one-with-the-terminal-other-setup">Tutorial 1 -
+The one with the Terminal &amp; other setup</h1>
+<p>Remember the scenes in Hollywood movies where hackers sit in front of
+a computer and type something definitely not in English in a black
+window like this?</p>
+<figure>
+<img src="data/2vnrkw8.png" alt="hacker_lol" />
+<figcaption aria-hidden="true">hacker_lol</figcaption>
+</figure>
+<p>In this tutorial, we’re going to learn to set up the terminal, which
+is a black screen you can type stuff in (but you can set it to any other
+color you want). You’ll see that it won’t be anything like in those
+hacker movies, (and if you read more online you’ll see that those
+hacking scences ain’t anything like the real world hacks…) but it will
+still be very cool I promise.</p>
+<p>Before we get into the terminal part, we’ll first go through some
+setup and get you download a few tools to your computer. This tutorial
+and the rest will be done with the assumption that you’re using a Mac.
+<strong><em>If you’ve not updated your mac to the latest OS, please do
+so. Remember to backup your data, always backup your data
+first!</em></strong></p>
+<ul>
+<li><a
+href="#tutorial-1---the-one-with-the-terminal--other-setup">Tutorial 1 -
+The one with the Terminal &amp; other setup</a>
+<ul>
+<li><a href="#spotlight">Spotlight</a></li>
+<li><a href="#iterm2">iTerm2</a></li>
+<li><a href="#vscode">VSCode</a></li>
+<li><a href="#command-line-tools">Command-line tools</a></li>
+<li><a href="#homebrew">Homebrew</a></li>
+<li><a href="#oh-my-zsh">Oh-my-zsh</a></li>
+<li><a href="#something-cool">Something cool</a>
+<ul>
+<li><a href="#youtube-dl">youtube-dl</a></li>
+<li><a href="#watching-star-wars">Watching Star Wars</a></li>
+<li><a href="#matrix">Matrix</a></li>
+</ul></li>
+<li><a href="#references">References</a></li>
+</ul></li>
+</ul>
+<h2 id="spotlight">Spotlight</h2>
+<p>Your Mac comes not with fries but a powerful tool called Spotlight.
+It’s that magnifier icon on the upper right:</p>
+<figure>
+<img
+src="data/001-use-spotlight-mac-4586951-4db79788ac374ef388688ceb701264c4.png"
+alt="spotlight" />
+<figcaption aria-hidden="true">spotlight</figcaption>
+</figure>
+<p>Spotlight can <strong>index</strong> your whole computer. You’ll come
+across the term <em>index</em> more often when you learn about search.
+Think of it as a way to mark every stuff in your computer so it’s easier
+to find later.</p>
+<p>Gone are the days you have to click on Launchpad and look around for
+an app. Now you just have to launch Spotlight/Alfred and type in the
+name of the app it’ll find it for you. The only thing you have to do is
+to set a shortcut for launching Alfred/Spotlight.</p>
+<p>To find out/set the shortcut for launching spotlight, you go to
+System Preferences –&gt; Keyboard –&gt; Shortcuts –&gt; Choose Spotlight
+on the left column.</p>
+<figure>
+<img src="data/spotlight_shortcut.png" alt="spotlight" />
+<figcaption aria-hidden="true">spotlight</figcaption>
+</figure>
+<p>You only need to check <code>Show Spotlight search</code>, then click
+on the box on the right, enter your shortcut and Enter. I often use
+<code>command + space</code> (command symbol = ugly 4-leaf clover), so
+just like in the screenshot above.</p>
+<p>Now just <code>command + space</code>, Spotlight should show up for
+you. Then type on the name of whatever you want to find, it shall shown
+you a bunch of results to choose from. For example here I’m looking for
+VS Code:</p>
+<figure>
+<img src="data/spotlight_vscode.png" alt="vscode" />
+<figcaption aria-hidden="true">vscode</figcaption>
+</figure>
+<h2 id="iterm2">iTerm2</h2>
+<p>Mac comes with a terminal app, but it’s not good enough. Please use
+iTerm2, download from <a
+href="https://iterm2.com/downloads.html">here</a>.</p>
+<p>It should download a .zip file, just click on it to extract the app.
+Drag &amp; drop it to the <code>Applications</code> folder then you’re
+good to go.</p>
+<figure>
+<img src="data/iterm2.png" alt="iterm2" />
+<figcaption aria-hidden="true">iterm2</figcaption>
+</figure>
+<h2 id="vscode">VSCode</h2>
+<p>VSCode (Visual Studio Code) is a code editor, i.e. a text-editor but
+for code. Think of it like Microsoft Word but has all sort of fancy
+functions to support writing code.</p>
+<p>Similar to iTerm2, just download it, click on the zip file to
+extract, then drag &amp; drop to <code>Applications</code> folder.</p>
+<h2 id="command-line-tools">Command-line tools</h2>
+<p>On the way to learn programming, you’ll have to use a lot of
+supporting tools. Don’t have to think too much about it, just know that
+you’ll need a lot of tools. Don’t need to know what they are, just know
+you can install most of them through
+<code>Xcode Command-line Tools</code>. To do this, open your iTerm2: -
+<code>command + space</code> to launch Spotlight - type in
+<code>iTerm2</code> - Use up/down arrows to select <code>iTerm2</code>
+and enter</p>
+<p>In the iTerm2 window, type in <code>xcode-select --install</code>,
+and Enter. You’ll see something like this:</p>
+<figure>
+<img src="data/install-Xcode-CLT.png" alt="cmdline" />
+<figcaption aria-hidden="true">cmdline</figcaption>
+</figure>
+<p>Just click Install &amp; wait until it looks like this:</p>
+<figure>
+<img src="data/install-Xcode-CLT-done.png" alt="cmdline_done" />
+<figcaption aria-hidden="true">cmdline_done</figcaption>
+</figure>
+<h2 id="homebrew">Homebrew</h2>
+<p>In the next tutorial when we learn more about the terminal, we’ll see
+that there are a lot of cool programs we can run there. But just like
+life, computers and programs are ever changing. To control this, we
+often designate a version to a release of a software so we know which is
+which. This is very important. For example, you’re writing a program
+that depends on another program X. You test and know for sure your code
+works fine if X_version=1.0. But you’ll never know if X_version=1.1 will
+stay the same or not, so you should specifically mention in your code
+that it has to be X_version=1.0.</p>
+<p>Anyway, this highlights a need to have some software to manager all
+versions of any program. Software like this is called package manager. A
+program is a package. A library (just think of it as a bunch of
+supporting code) is also a package. And a package manager knows all of
+them, past and future, one ring to rule them all.</p>
+<p>For mac, the most popular package manager is called Homebrew. To
+install it, simply head to <a href="https://brew.sh/">brew.sh</a>, copy
+&amp; paste the command there into your iTerm2 window and Enter.</p>
+<p>You can find example screenshots of the installation <a
+href="https://phoenixnap.com/kb/install-homebrew-on-mac#ftoc-heading-3">on
+this website</a>.</p>
+<p>We’ll see how to use homebrew to install something later.</p>
+<h2 id="oh-my-zsh">Oh-my-zsh</h2>
+<p>If you open your iTerm2 window right you, you can see that it’s
+kinda…boring. There’s a tool to make it more colorful, but more
+importantly, make it much easier to use through crazy tons of built-in
+functions. It’s called oh-my-zsh. We’ll talk about zsh later.</p>
+<p>To install oh-my-zsh, simply run a command copied from <a
+href="https://ohmyz.sh/#install">https://ohmyz.sh/#install</a>.</p>
+<p>If it asks, just say Yes. We’ll see how much easier oh-my-zsh does to
+your life later.</p>
+<h2 id="something-cool">Something cool</h2>
+<p>Now you have a Terminal!!! Now, I promised something cool, so let’s
+try something cool!</p>
+<h3 id="youtube-dl">youtube-dl</h3>
+<p>Do you know you can download youtube videos from your computer,
+without using any website or sketchy software??? Lemme welcome you to <a
+href="https://github.com/ytdl-org/youtube-dl">youtube-dl</a>!</p>
+<p>Let’s install it with Homebrew, in an iTerm2 window, type in:</p>
+<p><code>brew install youtube-dl</code></p>
+<p>It should look like this: <img src="data/youtube-dl.png"
+alt="youtube-dl" /></p>
+<p>Let’s download this song to practice the living room routine. In your
+iTerm2 window, enter:</p>
+<p><code>youtube-dl https://www.youtube.com/watch\?v\=zzRr55RGYc4</code></p>
+<p>It’ll proceed to download and looks like this:</p>
+<figure>
+<img src="data/youtube-dl-download.png" alt="youtube-dl-download" />
+<figcaption aria-hidden="true">youtube-dl-download</figcaption>
+</figure>
+<p>Btw, if you’re looking for the best video player for mac, try <a
+href="https://iina.io/">IINA</a>.</p>
+<h3 id="watching-star-wars">Watching Star Wars</h3>
+<p>Yeah, I’m not kidding. You can watch Star Wars from the Terminal!</p>
+<p>First install <code>telnet</code>:</p>
+<p><code>brew install telnet</code></p>
+<p>After telnet is successfully installed, type in:</p>
+<p><code>telnet towel.blinkenlights.nl</code></p>
+<p>and Enter! Enjoy. Recommend with some popcorns.</p>
+<p><img src="data/starwars.png" alt="starwards" /> <img
+src="data/vader.png" alt="vader" /> <img src="data/robots.png"
+alt="robots" /></p>
+<h3 id="matrix">Matrix</h3>
+<p>You’ll learn how to print something on the terminal later. Now think
+about it, that scence in the Matrix is simply printing out
+letters/digits on the terminal continuously, right? Somebody already
+wrote it so we can simply test it out. The source is from <a
+href="https://osxdaily.com/2013/08/15/turn-the-terminal-into-a-matrix-style-scrolling-screen-of-binary-or-gibberish/">here</a>.
+In your iTerm2 window, copy and paste this then Enter:</p>
+<p><code>LC_ALL=C tr -c "[:digit:]" " " &lt; /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"</code></p>
+<p>It shall look like this:</p>
+<figure>
+<img src="data/matrix.png" alt="matrix" />
+<figcaption aria-hidden="true">matrix</figcaption>
+</figure>
+<h2 id="references">References</h2>
+<p>Images are copied from the following sources: -
+https://blog-en.webroot.com/wp-content/uploads/2015/01/2vnrkw8.png -
+https://www.lifewire.com/thmb/RkZFhWRUpyb3OXD7COey8c_L_Wo=/650x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/001-use-spotlight-mac-4586951-4db79788ac374ef388688ceb701264c4.jpg
+- https://mac.install.guide/assets/images/ruby/install-Xcode-CLT.png -
+https://mac.install.guide/assets/images/ruby/install-Xcode-CLT-done.png</p>
