@@ -14,6 +14,7 @@ Shell/terminal are powerful tools. This tutorial only aims to give you some fami
       - [grep](#grep)
       - [Pipe](#pipe)
       - [wget](#wget)
+      - [caffeinate](#caffeinate)
       - [**open**](#open)
   - [Conclusion](#conclusion)
   - [References](#references)
@@ -181,6 +182,17 @@ Here, I'm downloading a photo from wikipedia article for One Piece to my compute
 ![wget](data/wget.png)
 ![open_2](data/wget_open.png)
 
+#### caffeinate
+Want to keep your computer awake? Force it to drink some coffee:
+- open new iTerm2 window by `command + N`
+- run `caffeinate -d`
+- minimize that window and forget about it
+
+
+Additionally, you can simply run `caffeinate -d &`. The `&` will run this program in background so you don't have to open a new window then minimize it.  
+
+**IMPORTANT** This program will keep your computer open and running, never do that with your absence unless you are in your private room/office. Also lock your computer (Apple logo --> Lock Screen).  
+
 #### **open**
 In Mac, you can open any file/folder from the terminal using the program `open`.  
 
@@ -190,6 +202,9 @@ In Mac, you can open any file/folder from the terminal using the program `open`.
 - open a file: `open path_to_file` (this will use the default application for that file type)
 
 Soon you'll find this program super useful. Give it a try and open some pdf or text file or even an image/video!  
+
+
+
 
 ## Conclusion
 I hope the terminal is less strange to you now. From now open, to practice, try to use terminal to navigate the file system, create/delete files. To end this tutorial, you can find some (cute commands to run suggested in this link)[https://betterprogramming.pub/7-terminal-commands-that-will-just-make-you-smile-3f5bc8778080]
