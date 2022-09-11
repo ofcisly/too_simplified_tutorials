@@ -1,4 +1,4 @@
-# Tutorial 1 - The one with the Terminal & other setup
+# Tutorial 1 - Setup
 Remember the scenes in Hollywood movies where hackers sit in front of a computer and type something definitely not in English in a black window like this?  
 
 ![hacker_lol](data/2vnrkw8.png)  
@@ -7,7 +7,7 @@ In this tutorial, we're going to learn to set up the terminal, which is a black 
 
 Before we get into the terminal part, we'll first go through some setup and get you download a few tools to your computer. This tutorial and the rest will be done with the assumption that you're using a Mac. ***If you've not updated your mac to the latest OS, please do so. Remember to backup your data, always backup your data first!***
 
-- [Tutorial 1 - The one with the Terminal & other setup](#tutorial-1---the-one-with-the-terminal--other-setup)
+- [Tutorial 1 - Setup](#tutorial-1---setup)
   - [Spotlight](#spotlight)
   - [iTerm2](#iterm2)
   - [VSCode](#vscode)
