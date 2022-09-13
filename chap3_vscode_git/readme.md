@@ -6,6 +6,9 @@ Today we will go through the basics of VSCode, git, github, and you'll push some
   - [Git & Github](#git--github)
     - [Setup SSH for github](#setup-ssh-for-github)
     - [Testing](#testing)
+    - [More git stuff](#more-git-stuff)
+      - [**Clone**](#clone)
+      - [**Branches**](#branches)
   - [Conclusion](#conclusion)
 
 
@@ -101,7 +104,7 @@ I'll [let the internet explain public/private keys](https://www.ssh.com/academy/
 
 In your terminal:
 
-```
+```bash
 code ~/.zshrc # this will open .zshrc file in VSCode
 ```
 
@@ -118,7 +121,7 @@ Now, everytime you open your terminal after reboot, it should start the ssh-agen
 
 **Second**, create a public-private key pair. Also in your terminal:  
 
-```
+```bash
 mkdir ~/.ssh  # create this directory if not exists
 cd ~/.ssh     # go into it
 ssh-keygen -t rsa -b 4096 -C "your_email_for_github@something.com"
@@ -162,7 +165,7 @@ Click on that box under `Key`, then `command + V`. It should paste the content o
 ![ssh_5](data/ssh_5.png)  
 
 **Third**, this is the last one, I promise. In your terminal:
-```
+```bash
 # this will use nano to edit ~/.ssh/config
 nano ~/.ssh/config
 ```
@@ -181,7 +184,7 @@ Now close your terminal and open it again. You're ready to talk to github.
 ### Testing
 Let's go back to our `test_vscode` directory. We've created a file named `swear.txt`. Let's push it to github. In your terminal:
 
-```
+```bash
 # go to your test_vscode directory, your pathname might look different than mine
 cd ~/code/test_vscode
 git init
@@ -190,12 +193,12 @@ git config --global user.email "email_you_use_for_github@email.com"
 ```
 
 Since the repo is not yet controlled by git, we have to start it by `git init`. Then you tell git who you are by setting your name & email.  If you look in your terminal, `test_vscode` now has `(master)` next to it.  
-```
+```bash
 ➜  test_vscode git:(master) ✗
 ```
 And you can see a new directory `.git` is created:  
 
-```
+```bash
 (base) ➜  test_vscode git:(master) ✗ ls -la
 total 8
 drwxr-xr-x  4 dora  staff  128 Sep 13 11:39 .
@@ -206,7 +209,7 @@ drwxr-xr-x  9 dora  staff  288 Sep 13 11:39 .git
 
 Let's add `swear.txt`:  
 
-```
+```bash
 git add swear.txt
 git commit -m "first commit ever"
 ```  
@@ -214,7 +217,7 @@ git commit -m "first commit ever"
 When you make a change to your code repo, and think that it's good to be released. That's called a commit (don't be afraid, you're not marrying anyone). `git add some_file_has_changes` will add the file `some_file_has_changes` into the commit. Once you've added all the files for your commit, you do it by `git commit`. `-m` means messsage, and the content following it is the message for that commit. Usually you want something meaningful but succint so you can understand what you did later.  
 
 Since this is the first commit ever, you should follow github's instruction. For example, mine says to do the followings after commit:  
-```
+```bash
 git branch -M main
 git remote add origin git@github.com:ofcisly/test.git
 git push -u origin main
@@ -222,7 +225,7 @@ git push -u origin main
 
 `git brach -M main` creates a new branch called `main`. It used to be `master`, I won't delve into this debate but `main` is now the new `master`, just follow it. You shall see the `master` next to `test_vscode` is now `main`:  
 
-```
+```bash
 (base) ➜  test_vscode git:(main)
 ```
 
@@ -238,7 +241,7 @@ If you click on the `1 commit` on the top right, it shall bring you to a window 
 
 That's the first commit. For the following commits, you don't have to switch branch anymore, just make changes, commit, and push! Let's make another one.  
 
-```
+```bash
 # still in test_vscode directory
 echo "avada kedavra" > oh_no.txt
 git add oh_no.txt
@@ -294,7 +297,108 @@ Once commit, you can sync change (`git push`) by pressing `Sync changes`:
 That commit should appear in the github repo now!  
 ![git_vscode_10](data/git_vscode_10.png)  
 
+### More git stuff
+So far you've learned to use the `git` command line to create a git repo, add code change to a commit, push it to a remote repo on github.com. Now let's learn to how to pull code from a remote repo, create a branch, & merge branches.  
 
+
+#### **Clone**
+To download a repo from a remote server such as github.com is called cloning that repo.  
+
+On github.com, head to your repo, click on the arrow on `Code` at the top right, you should see something like this:  
+
+![clone](data/clone.png)  
+
+Choosing `SSH` as above, you should see a "link" like `git@github.com:ofcisly/too_simplified_tutorials.git`. We'll need that to clone. In your terminal:  
+
+```bash
+cd ~/code
+# let's clone this into a new name
+git clone git@github.com:ofcisly/too_simplified_tutorials.git copy_of_tutorials
+```
+
+This should clone the `too_simplified_tutorials` repo into `copy_of_tutorials` directory in your local machine. This, too, is a git repo, so it has a `.git` folder. Here's output from my terminal:  
+
+```bash
+(base) ➜  code cd copy_of_tutorials
+(base) ➜  copy_of_tutorials git:(main) ls -la
+total 8
+drwxr-xr-x   8 dora  staff  256 Sep 13 16:20 .
+drwxr-xr-x   5 dora  staff  160 Sep 13 16:20 ..
+drwxr-xr-x  12 dora  staff  384 Sep 13 16:20 .git
+-rw-r--r--   1 dora  staff   32 Sep 13 16:20 .gitignore
+drwxr-xr-x   4 dora  staff  128 Sep 13 16:20 chap1_setup
+drwxr-xr-x   4 dora  staff  128 Sep 13 16:20 chap2_shell
+drwxr-xr-x   4 dora  staff  128 Sep 13 16:20 chap3_vscode_git
+drwxr-xr-x   3 dora  staff   96 Sep 13 16:20 chap4_python
+```
+
+Voila! That's all.  
+
+#### **Branches**
+Assuming you're working on a new feature. The rule of thumb (which I learned from my first job but don't usually follow for simple projects) is always create a new branch for that feature. Even if it's really simple!  
+
+
+```bash
+cd test_vscode
+# create new branch new_feature
+git checkout -b new_feature
+# create a new file, add it to commit
+echo "this file should only appear in branch new_feature if it's not merged into main yet" > new_feature.txt
+git add new_feature.txt
+git commit -m "[f] new feature"
+# we match the local branch name new_feature with the remote one
+# in the remote, now there's a branch called origin/new_feature
+git push origin new_feature
+```
+
+Now, head to your repo on github.com. You should now see there are 2 branches:  
+
+![branches](dat/../data/branches.png)  
+
+Click on `new_feature`, it'll switch to that branch. You'll see the file `new_feature.txt` which is not available on `main` branch.  
+
+Let's learn to merge the branch `new_feature` on your local machine. In your terminal:  
+
+```bash
+# still in test_vscode
+# this switches batch to branch `main`
+git checkout main
+# this merge the changes made in new_feature to main
+git merge new_feature
+```
+
+You should see now that `new_feature.txt` is available in the branch `main` as well. For example, this is the output from my terminal:  
+
+```bash
+(base) ➜  test_vscode git:(new_feature) git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+(base) ➜  test_vscode git:(main) git merge new_feature
+Updating 02bd4a1..897e2d1
+Fast-forward
+ new_feature.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 new_feature.txt
+(base) ➜  test_vscode git:(main) ls -la
+total 24
+drwxr-xr-x   6 dora  staff  192 Sep 13 16:34 .
+drwxr-xr-x   5 dora  staff  160 Sep 13 16:20 ..
+drwxr-xr-x  14 dora  staff  448 Sep 13 16:34 .git
+-rw-r--r--   1 dora  staff   84 Sep 13 16:34 new_feature.txt
+-rw-r--r--   1 dora  staff   14 Sep 13 11:46 oh_no.txt
+-rw-r--r--   1 dora  staff  114 Sep 13 11:57 swear.txt
+```  
+
+When you work in a company, every merge must be reviewed before the merge happens. Assuming your company uses github, each time you create a new branch and push it to remote, you can create what they call `pull request`. Basically, it will compare the new branch (`X`) and the branch you want to merge to (`main`). It will show all the differences, and you can also request people to come review your code. Once everyone gives their LGTM (look good to me), you go ahead and merge on github. After that you can update your `main` but going to your repo:  
+
+```bash
+# still in test_vscode
+git checkout main
+# this will pull the latest changes on remote's main but not available in your local main
+git pull
+```  
+
+To learn more about pull request: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
 ## Conclusion
 To sum up:
 - you've learned how to setup github, ssh
