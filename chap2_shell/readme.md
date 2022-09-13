@@ -107,8 +107,10 @@ Do you see how I could use `.` in place of the fullpath of current directory in 
 
 #### **Interaction with files/directories**
 To create a file in current directory: `touch filename`
-![touch](data/touch.png)
-Do you see that originally there was no file called `phoebe.txt` but after the `touch` command, there is?
+![touch](data/touch.png)  
+
+Do you see that originally there was no file called `phoebe.txt` but after the `touch` command, there is?  
+
 
 To see the file content: `cat path_to_file`
 ![empty](data/empty.png)
