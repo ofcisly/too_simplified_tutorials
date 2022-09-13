@@ -304,3 +304,6 @@ To sum up:
 - make more changes, create commit with VSCode, push to github with VSCode  
 
 I hope you're a bit more familiar with git, github, and VSCode now and ready to push!  
+
+
+PS: I mistyped `architect` to `architecture`,
