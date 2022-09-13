@@ -205,11 +205,8 @@ In Mac, you can open any file/folder from the terminal using the program `open`.
 
 Soon you'll find this program super useful. Give it a try and open some pdf or text file or even an image/video!  
 
-
-
-
 ## Conclusion
-I hope the terminal is less strange to you now. From now open, to practice, try to use terminal to navigate the file system, create/delete files. To end this tutorial, you can find some (cute commands to run suggested in this link)[https://betterprogramming.pub/7-terminal-commands-that-will-just-make-you-smile-3f5bc8778080]
+I hope the terminal is less strange to you now. From now on, to practice, try to use terminal to navigate the file system, create/delete files. To end this tutorial, you can find some (cute commands to run suggested in this link)[https://betterprogramming.pub/7-terminal-commands-that-will-just-make-you-smile-3f5bc8778080]
 
 For example, I like train so I install `brew install sl`:
 ![sl](data/sl.png)
